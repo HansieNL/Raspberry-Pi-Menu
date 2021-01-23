@@ -1,1 +1,1 @@
-# -Domoticz-Menu
+# Domoticz Menu
