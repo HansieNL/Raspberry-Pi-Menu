@@ -1,0 +1,45 @@
+#!/bin/bash
+clear
+RETVAL=$(whiptail --title "Domoticz Menu" --menu "" 23 63 0 \
+"1" "Backup Domoticz" \
+"2" "Backup Dashticz" \
+"3" "Backup Web Server" \
+"4" "[Disabled]" \
+"5" "Domoticz Status" \
+"6" "Stop Domoticz and Disable Monitoring" \
+"7" "Start Domoticz and Enable Monitoring" \
+"8" "Restart Domoticz" \
+"9" "Monitoring Status" \
+"10" "Disable Monitoring All Services" \
+"11" "Enable Monitoring All Services" \
+"12" "Quit Monitoring" \
+"13" "Start Monitoring" \
+"14" "Updating and Upgrading Raspbian" \
+"15" "Raspberry Pi Software Configuration Tool" \
+"16" "Shutdown System" \
+"17" "Reboot System" \
+3>&1 1>&2 2>&3)
+
+# Below you can enter the corresponding commands
+# Make menu script executable
+
+case $RETVAL in
+    1) sudo bash /home/pi/domoticz/scripts/shell/domoticz_backup.sh ;;
+    2) sudo bash /home/pi/domoticz/scripts/shell/dashticz_backup.sh ;;
+    3) sudo bash /home/pi/domoticz/scripts/shell/www_backup.sh ;;
+    4) echo [Disabled] ;;
+    5) sudo service domoticz.sh status ;;
+    6) sudo monit unmonitor domoticz && sudo service domoticz.sh stop && echo Domoticz Stopped and Monitoring Disabled ;;
+    7) sudo service domoticz.sh start && sudo monit monitor domoticz && echo Domoticz Started and Monitoring Enabled ;;
+    8) sudo service domoticz.sh restart ;;
+    9) sudo monit status ;;
+    10) sudo monit unmonitor all && echo Monitoring All Services Disabled ;;
+    11) sudo monit monitor all && echo Monitoring All Services Enabled ;;
+    12) sudo monit quit && echo Monitoring Quitted ;;
+    13) sudo monit && echo Monitoring Started ;;
+    14) sudo apt-get update && sudo apt-get -y upgrade ;;
+    15) sudo raspi-config ;;
+    16) sudo shutdown -h now ;;
+    17) sudo shutdown -r now ;; 
+    *) echo "You chose Cancel." ;;
+esac
