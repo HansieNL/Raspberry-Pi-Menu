@@ -38,7 +38,7 @@ case $RETVAL in
     13) sudo monit monitor all && echo Monitoring All Services Enabled ;;
     13) sudo monit quit && echo Monitoring Quitted ;;
     14) sudo monit && echo Monitoring Started ;;
-    15) sudo apt-get update && sudo apt-get -y upgrade ;;
+    15) sudo apt update && sudo apt -y upgrade ;;
     16) sudo shutdown -h now ;;
     17) sudo shutdown -r now ;;
     *) echo "You chose Cancel." ;;
