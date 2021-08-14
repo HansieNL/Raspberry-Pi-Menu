@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 RETVAL=$(whiptail --title "Raspberry Pi Menu" --menu "" 23 63 0 \
-"1" "Backup Domoticz" \
+"1" "Backup Home and Domoticz" \
 "2" "Backup Dashticz" \
 "3" "Backup Web Server" \
 "4" "Configure raspiBackup" \
