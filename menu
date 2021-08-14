@@ -15,7 +15,7 @@ RETVAL=$(whiptail --title "Domoticz Menu" --menu "" 23 63 0 \
 "12" "Enable Monitoring All Services" \
 "13" "Quit Monitoring" \
 "14" "Start Monitoring" \
-"15" "Updating and Upgrading Raspbian" \
+"15" "Updating and Upgrading Raspberry Pi OS" \
 "16" "Shutdown System" \
 "17" "Reboot System" \
 3>&1 1>&2 2>&3)
