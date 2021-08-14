@@ -24,9 +24,9 @@ RETVAL=$(whiptail --title "Raspberry Pi Menu" --menu "" 23 63 0 \
 # Make menu script executable
 
 case $RETVAL in
-    1) sudo bash /home/pi/domoticz/scripts/shell/domoticz_backup.sh ;;
-    2) sudo bash /home/pi/domoticz/scripts/shell/dashticz_backup.sh ;;
-    3) sudo bash /home/pi/domoticz/scripts/shell/www_backup.sh ;;
+    1) sudo bash /home/pi/domoticz_backup.sh ;;
+    2) sudo bash /home/pi/dashticz_backup.sh ;;
+    3) sudo bash /home/pi/www_backup.sh ;;
     4) sudo raspiBackupInstallUI.sh ;;
     5) sudo raspiBackup.sh -m detailed ;;
     6) sudo service domoticz.sh status ;;
