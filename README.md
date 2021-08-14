@@ -1,4 +1,4 @@
-# Domoticz Menu
+# Raspberry Pi Menu
 
 Bash Shell Script/Whiptail
 
