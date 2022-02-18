@@ -35,7 +35,7 @@ case $RETVAL in
     9) sudo service domoticz.sh restart ;;
     10) sudo monit status ;;
     11) sudo monit unmonitor all && echo Monitoring All Services Disabled ;;
-    13) sudo monit monitor all && echo Monitoring All Services Enabled ;;
+    12) sudo monit monitor all && echo Monitoring All Services Enabled ;;
     13) sudo monit quit && echo Monitoring Quitted ;;
     14) sudo monit && echo Monitoring Started ;;
     15) sudo apt update && sudo apt -y upgrade ;;
